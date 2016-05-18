@@ -15,6 +15,20 @@ function print(x) {
 
 function billTotal(total) {
 	// write code here
+	var billTotal = 0;
+	var tip = 0;
+	var tax = 0;
+	if(total > 0)
+	{
+        tip = (15/100)*total ;
+        tax = (9.5/100)*total;
+        billTotal = total + tip + tax;
+        return Math.round(billTotal*100)/100;
+	}
+	else
+	{
+		return "You Got Lucky !! lunch/dinner is free"
+	}
 }
 
 // billTotal(21.55); // "Your total comes to $26.83"
@@ -35,6 +49,88 @@ function billTotal(total) {
 
 function animalNoise(animal, emotion) {
 // TODO: your code here
+     var animals = ["cat", "dog", "horse", "duck", "chicken", "cow", "human"];
+     var Emotions =["angry", "happy", "sad", "surprised"];
+     var noise = ["Meow", "Bark", "Neigh", "Quack",":)"];
+
+    // Code only noise for Emotions "angry" // I am returning Funny Sound for everything else
+     if(animal.toLowerCase() == animals[0])
+     {
+          switch(emotion.toLowerCase()) {
+          case Emotions[0]:
+               return noise[0];
+               break;
+           default:
+              return "Funny Sound";
+
+          }
+
+     }
+     else if(animal.toLowerCase() == animals[1])
+     {
+           switch(emotion.toLowerCase()) {
+           case Emotions[0]:
+                 return noise[1];
+                 break;
+            default:
+              return "Funny Sound";
+          }
+     }
+    else if(animal.toLowerCase() == animals[2])
+     {
+          switch(emotion.toLowerCase()) {
+          case Emotions[0]:
+               return noise[2];
+               break;
+          default:
+              return "Funny Sound";
+
+          }
+     }
+     else if(animal.toLowerCase() == animals[3])
+     {
+          switch(emotion.toLowerCase()) {
+           case Emotions[0]:
+               return noise[3];
+               break;
+            default:
+              return "Funny Sound";
+          }
+     }
+     else if(animal.toLowerCase() == animals[4])
+     {
+          switch(emotion.toLowerCase()) {
+           case Emotions[0]:
+               return noise[4];
+               break;
+            default:
+              return "Funny Sound";
+          }
+     }
+     else if(animal.toLowerCase() == animals[5])
+     {
+          switch(emotion.toLowerCase()) {
+           case Emotions[0]:
+               return noise[4];
+               break;
+           default:
+              return "Funny Sound";
+          }
+     }
+     else if(animal.toLowerCase() == animals[6])
+     {
+          switch(emotion.toLowerCase()) {
+           case Emotions[0]:
+               return noise[4];
+               break;
+           default:
+              return "Funny Sound";
+          }
+     }
+     else{
+     	return "Animal not found !!!"
+     }
+
 }
 
 
@@ -54,6 +150,35 @@ function animalNoise(animal, emotion) {
 // What should digitalSum of a single-digit number 
 // return, e.g. digitalSum(8)?
 
-function digitalSum(num) {
-  // TODO: your code here
+function digitalSum(n)
+{
+	 //base case  // if we have single digit like 8 .. 8 % 10 == 8 
+	 if(n % 10 == n)
+	 {
+	 	return n
+	 }
+
+	 return digitalSum1(n % 10) + digitalSum1(Math.floor(n / 10));
+}
+
+// Just for fun // not using while loop though :)
+function digitalSum1(n)
+{
+	 var total = 0;
+
+	 var str = n + "";
+
+	 //var strarr = [];
+
+	 str = str.split("");
+
+	 for(i=0 ; i < str.length; i++)
+	 {
+          total = total + parseInt(str[i]);
+          //console.log(total);
+	 }
+
+	 return total;
+
+	 
 }
